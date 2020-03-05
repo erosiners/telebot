@@ -192,8 +192,8 @@ func processButtons(keys [][]InlineButton) {
 		return
 	}
 
-	for i, _ := range keys {
-		for j, _ := range keys[i] {
+	for i := range keys {
+		for j := range keys[i] {
 			key := &keys[i][j]
 			if key.Unique != "" {
 				// Format: "\f<callback_name>|<data>"
@@ -210,7 +210,11 @@ func processButtons(keys [][]InlineButton) {
 
 func embedRights(p map[string]interface{}, prv Rights) {
 	jsonRepr, _ := json.Marshal(prv)
+<<<<<<< HEAD
 	json.Unmarshal(jsonRepr, p)
+=======
+	_ = json.Unmarshal(jsonRepr, &p)
+>>>>>>> upstream/v2
 }
 
 func thumbnailToFilemap(thumb *Photo) map[string]File {
