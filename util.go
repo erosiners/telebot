@@ -210,11 +210,7 @@ func processButtons(keys [][]InlineButton) {
 
 func embedRights(p map[string]interface{}, prv Rights) {
 	jsonRepr, _ := json.Marshal(prv)
-<<<<<<< HEAD
-	json.Unmarshal(jsonRepr, p)
-=======
-	_ = json.Unmarshal(jsonRepr, &p)
->>>>>>> upstream/v2
+	json.Unmarshal(jsonRepr, &p)
 }
 
 func thumbnailToFilemap(thumb *Photo) map[string]File {
