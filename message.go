@@ -27,6 +27,10 @@ type Message struct {
 	// forwarded from a channel.
 	OriginalChat *Chat `json:"forward_from_chat"`
 
+	//For messages forwarded from channels
+	//identifier of the original message in the channel
+	OriginalMessageId int `json:"forward_from_message_id"`
+
 	// For forwarded messages, unixtime of the original message.
 	OriginalUnixtime int `json:"forward_date"`
 
